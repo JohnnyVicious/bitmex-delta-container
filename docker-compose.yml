@@ -1,4 +1,4 @@
-version: "2"
+version: "2020.3.23"
 
 services:
   bitmex-delta-server:
@@ -8,12 +8,12 @@ services:
     environment:
       - DEBUG=BitMEX:* node index.js
       - PORT=4444
-      - IS_TESTNET=true
+      - IS_TESTNET=false
       - SYMBOL=XBTUSD,ETHUSD
-      - STREAMS=quote,trade,execution
+      - STREAMS=orderBookL2,trade
       # - BITMEX_KEY= # assuming set BITMEX_KEY in .env, TEST_BITMEX_KEY as well
       # - BITMEX_SECRET_KEY= # assuming set BITMEX_SECRET_KEY in .env, TEST_BITMEX_SECRET_KEY as well
       - MAX_TABLE_LEN=5000
     env_file: .env
     ports:
-      - "4444:4444"
+      - "0:4444"
