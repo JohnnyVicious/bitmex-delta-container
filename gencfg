@@ -1,23 +1,28 @@
 #!/bin/bash
 if [ -z "$IS_TESTNET" ]; then
-  echo "Environment variable 'IS_TESTNET' is empty. so IS_TESTNET is set false."
+  echo "Environment variable 'IS_TESTNET' is empty."
+  echo "IS_TESTNET is set false."
   export IS_TESTNET=false
 fi
 if [ -z "$PORT" ]; then
   echo "Environment variable 'PORT' is empty!"
-  exit 1
+  echo "PORT is set to 4444."
+  export PORT=4444
 fi
 if [ -z "$SYMBOL" ]; then
   echo "Environment variable 'SYMBOL' is empty!"
-  exit 1
+  echo "SYMBOL is set to XBTUSD."
+  export SYMBOL=XBTUSD
 fi
 if [ -z "$STREAMS" ]; then
   echo "Environment variable 'STREAMS' is empty!"
-  exit 1
+  echo "STREAMS is set to instrument."
+  export STREAMS=instrument
 fi
 if [ -z "$MAX_TABLE_LEN" ]; then
   echo "Environment variable 'MAX_TABLE_LEN' is empty!"
-  exit 1
+  echo "'MAX_TABLE_LEN' is set to 5000."
+  export MAX_TABLE_LEN=5000
 fi
 
 if "$IS_TESTNET" = "true"; then
