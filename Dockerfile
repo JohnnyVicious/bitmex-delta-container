@@ -1,4 +1,4 @@
-FROM node:13.1.0-alpine3.10
+FROM node:13.8.0-alpine3.11
 
 RUN apk add --update alpine-sdk gettext
 
